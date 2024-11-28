@@ -9,7 +9,10 @@ const cookieParser = require("cookie-parser");
 
 // Middleware to parse JSON
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin:['http://localhost:3000','https://taskify-7thies6mgmailcoms-projects.vercel.app','https://taskify-eight-zeta.vercel.app/','https://taskify-git-main-7thies6mgmailcoms-projects.vercel.app/'],
+  credentials:true,
+}));
 app.use(cookieParser());
 
 
@@ -22,7 +25,12 @@ app.get("/",(req,res)=>{
   res.send("hello ra")
 })
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI)
+mongoose.connect(process.env.MONGODB_URI,{{
+  serverApi: {
+    version: ServerApiVersion.v1,
+    strict: true,
+    deprecationErrors: true,
+  }})
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));
 

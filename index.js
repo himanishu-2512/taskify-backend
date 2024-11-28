@@ -21,6 +21,9 @@ app.use(cookieParser());
 app.use("/api/v1/users", userRoutes);
 app.use("/api/v1/document", documentRoutes);
 
+app.get("/",(req,res)=>{
+  res.send("hello ra")
+})
 // Connect to MongoDB
 mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true })
   .then(() => console.log("Connected to MongoDB"))

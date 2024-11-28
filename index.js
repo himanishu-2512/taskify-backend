@@ -25,12 +25,7 @@ app.get("/",(req,res)=>{
   res.send("hello ra")
 })
 // Connect to MongoDB
-mongoose.connect(process.env.MONGODB_URI,{{
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  }})
+mongoose.connect(process.env.MONGODB_URI)
   .then(() => console.log("Connected to MongoDB"))
   .catch((err) => console.error("Failed to connect to MongoDB", err));
 

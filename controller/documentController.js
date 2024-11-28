@@ -63,6 +63,7 @@ const getDocumentVersions = async (req, res) => {
     const lastVersions = document.versions.slice(-10).reverse(); // Get last 10 versions
 
     return res.status(200).json({
+      message:"Successfully fetched last 10 versions of document",
       title: document.title,
       access: document.access,
       description: document.description,

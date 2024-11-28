@@ -10,7 +10,7 @@ const cookieParser = require("cookie-parser");
 // Middleware to parse JSON
 app.use(express.json());
 app.use(cors({
-  origin: 'http://localhost:3000',  // Allow only this domain to make requests
+  origin: 'https://taskify-eight-zeta.vercel.app/',  // Allow only this domain to make requests
   credentials: true,
 }));
 app.use(cookieParser());

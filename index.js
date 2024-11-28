@@ -9,9 +9,7 @@ const cookieParser = require("cookie-parser");
 
 // Middleware to parse JSON
 app.use(express.json());
-app.use(cors({
-  origin: '*',  // Allow only this domain to make requests
-}));
+app.use(cors());
 app.use(cookieParser());
 
 
